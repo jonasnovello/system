@@ -31,6 +31,8 @@
             <main>
                 {{ $slot }}
             </main>
+
+            <a href="{{ route('initial') }}">Inicial</a>
         </div>
     </body>
 </html>

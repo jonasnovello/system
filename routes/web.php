@@ -18,9 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () { return view('dashboard');})
+Route::get('/dashboard', function () { return view('system.dashboard');})
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
+Route::get('access-denied', function (){return view('system.access-denied');})
+    ->name('access-denied');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

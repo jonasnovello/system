@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('permissions', '60')->default('banners,pages,products,');
+            $table->string('permissions', '60')->nullable();
         });
     }
 

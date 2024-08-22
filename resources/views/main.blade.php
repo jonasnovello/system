@@ -94,9 +94,9 @@
                         </a>
                         <div class="collapse" id="collapseAccess" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="#">Users</a>
-                                <a class="nav-link" href="#">New User</a>
-                                <a class="nav-link" href="#">Reference User</a>
+                                <a class="nav-link" href="{{ route('users.show') }}">Users</a>
+                                <a class="nav-link" href="{{ route('users.create') }}">New User</a>
+                                <a class="nav-link" href="{{ route('users.reference') }}">Reference User</a>
                             </nav>
                         </div>
                     </div>

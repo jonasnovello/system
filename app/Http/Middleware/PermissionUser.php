@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class PermissionUser
@@ -15,13 +16,16 @@ class PermissionUser
      * @param  \Closure  $next
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, $permission): Response
     {
-        if (auth()->check() && strripos(auth()->user()->permissions, str_replace('/', '', $request->getRequestUri()))) {
+        $user = Auth::user();
+
+        if ($user && $user->hasPermission($permission)){
             return $next($request);
-        } else {
-            return redirect()->route('access-denied')->with('error', 'You do not have permission to access this area.');
         }
+
+        return redirect()->route('access-denied')->with('error', 'You do not have permission to
+        access '.$permission.' information.');
     }
 }
 

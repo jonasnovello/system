@@ -42,4 +42,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getPermissionsAttribute($value): array
+    {
+        return explode(',', $value);
+    }
+
+    public function hasPermission($permission): bool
+    {
+        return in_array($permission, auth()->user()->permissions);
+    }
 }

@@ -10,7 +10,7 @@
         </ol>
         <div class="row">
             <div class="col-xl-12 col-md-12">
-                <p>Você não tem acesso ao conteúdo requisitado.</p>
+                <p>{{ session('error') }}</p>
             </div>
     </div>
 @endsection

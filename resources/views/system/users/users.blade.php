@@ -12,12 +12,37 @@
             <div class="col-xl-12 col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        Featured
+                        <i class="fas fa-solid fa-users me-1"></i>
+                        Lista de usuários cadastrados
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Special title treatment</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Name</th>
+                                <th scope="col">E-mail</th>
+                                <th scope="col">Permissions</th>
+                            </tr>
+                            </thead>
+                            <tbody class="table-group-divider">
+
+                            @foreach($users as $user)
+                                <tr>
+                                    <th scope="row">{{ $user->id }}</th>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>
+                                        @foreach($user->permissions as $permission)
+                                            {{ $permission }},
+                                        @endforeach
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+
                     </div>
                 </div>
             </div>

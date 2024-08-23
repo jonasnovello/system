@@ -44,6 +44,9 @@
                         </table>
 
                     </div>
+                    <div class="container-fluid">
+                        {{ $users->links() }}
+                    </div>
                 </div>
             </div>
     </div>

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -22,132 +23,6 @@ class UserSeeder extends Seeder
             'permissions' => 'banners,products,users,pages,',
         ]);
 
-        DB::table('users')->insert([
-            'name' => 'Tamires Grigoleto dos Santos',
-            'email' => 'tamires.grigoleto@gmail.com',
-            'password' => Hash::make('12345678'),
-            'created_at' => now(),
-            'permissions' => 'products',
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Maria Aparecida Gedolin',
-            'email' => 'mariaaparecida@gmail.com',
-            'password' => Hash::make('12345678'),
-            'created_at' => now(),
-            'permissions' => 'products',
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Maria Luísa Grigoleto dos Santos',
-            'email' => 'malu@gmail.com',
-            'password' => Hash::make('12345678'),
-            'created_at' => now(),
-            'permissions' => 'products',
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Enide Novello dos Santos',
-            'email' => 'enidenovello@gmail.com',
-            'password' => Hash::make('12345678'),
-            'created_at' => now(),
-            'permissions' => 'products',
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Joyce dos Santos Zanelatto',
-            'email' => 'joycezanelatto@gmail.com',
-            'password' => Hash::make('12345678'),
-            'created_at' => now(),
-            'permissions' => 'products',
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Gisele Aparecida Novello dos Santos',
-            'email' => 'gisele@gmail.com',
-            'password' => Hash::make('12345678'),
-            'created_at' => now(),
-            'permissions' => 'products',
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Israel Rosalino dos Santos',
-            'email' => 'israel.rosalino@gmail.com',
-            'password' => Hash::make('12345678'),
-            'created_at' => now(),
-            'permissions' => 'products',
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Guilherme Henrique Menegatti',
-            'email' => 'guimenegatti@gmail.com',
-            'password' => Hash::make('12345678'),
-            'created_at' => now(),
-            'permissions' => 'products',
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Beatriz Menegatti',
-            'email' => 'bia.menegatti@gmail.com',
-            'password' => Hash::make('12345678'),
-            'created_at' => now(),
-            'permissions' => 'products',
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Maria Vitória dos Santos Menegatti',
-            'email' => 'mavi@gmail.com',
-            'password' => Hash::make('12345678'),
-            'created_at' => now(),
-            'permissions' => 'products',
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Alice dos Santos Zanelatto',
-            'email' => 'alice.zanelatto@gmail.com',
-            'password' => Hash::make('12345678'),
-            'created_at' => now(),
-            'permissions' => 'products',
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Maria de Lourdes Alcantara dos Santos',
-            'email' => 'volourde@gmail.com',
-            'password' => Hash::make('12345678'),
-            'created_at' => now(),
-            'permissions' => 'products',
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Cleonice dos Santos Honório',
-            'email' => 'tiacleo@gmail.com',
-            'password' => Hash::make('12345678'),
-            'created_at' => now(),
-            'permissions' => 'products',
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Benedito Honório',
-            'email' => 'tioticao@gmail.com',
-            'password' => Hash::make('12345678'),
-            'created_at' => now(),
-            'permissions' => 'products',
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'David Honório',
-            'email' => 'davi.honorio@gmail.com',
-            'password' => Hash::make('12345678'),
-            'created_at' => now(),
-            'permissions' => 'products',
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Juliana Honório',
-            'email' => 'ju.honorio@gmail.com',
-            'password' => Hash::make('12345678'),
-            'created_at' => now(),
-            'permissions' => 'products',
-        ]);
+        User::factory(30)->create();
     }
 }

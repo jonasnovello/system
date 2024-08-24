@@ -61,10 +61,10 @@ Route::middleware('auth')->group(function () {
 
 Route::group(['middleware' => ['auth', 'permissions:users']], function () {
     Route::get('users', [UserController::class, 'show'])->name('users.show');
-    Route::get('users/new', [UserController::class, 'users.create'])->name('users.create');
-    Route::post('users/new', [UserController::class, 'users.store'])->name('users.store');
-    Route::get('users/edit/{id}', [UserController::class, 'users.edit'])->name('users.edit');
-    Route::post('users/edit', [UserController::class, 'users.update'])->name('users.update');
-    Route::delete('users/{id}', [UserController::class, 'users.destroy'])->name('users.destroy');
-    Route::post('users/reference', [UserController::class, 'users.reference'])->name('users.reference');
+    Route::get('users/new', [UserController::class, 'create'])->name('users.create');
+    Route::post('users/new', [UserController::class, 'store'])->name('users.store');
+    Route::get('users/edit/{id}', [UserController::class, 'edit'])->name('users.edit');
+    Route::post('users/edit', [UserController::class, 'update'])->name('users.update');
+    Route::delete('users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+    Route::post('users/reference', [UserController::class, 'reference'])->name('users.reference');
 });

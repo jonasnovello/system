@@ -9,8 +9,14 @@ use Illuminate\View\View;
 
 class UserController extends Controller
 {
-    public function show(): View{
+    public function show(): View
+    {
         $users = User::paginate(14);
         return view('system.users.users', ['users' => $users]);
+    }
+
+    public function create(): View
+    {
+        return view('system.users.user-create');
     }
 }

@@ -20,8 +20,7 @@
         <!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
             <div class="input-group">
-                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                <input class="form-control" type="text" placeholder="Procurar" aria-label="Search for..." aria-describedby="btnNavbarSearch" />
             </div>
         </form>
         <!-- Navbar-->
@@ -59,6 +58,19 @@
                                 <a class="nav-link" href="#">New Product</a>
                                 <a class="nav-link" href="#">Categories</a>
                                 <a class="nav-link" href="#">New Category</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseVehicles" aria-expanded="false" aria-controls="collapseVehicles">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Veículos
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseVehicles" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="#">Veículos Disponíveis</a>
+                                <a class="nav-link" href="#">Novo Veículo</a>
+                                <a class="nav-link" href="#">Montadoras</a>
+                                <a class="nav-link" href="#">Categorias</a>
                             </nav>
                         </div>
                         <div class="sb-sidenav-menu-heading">Interface</div>

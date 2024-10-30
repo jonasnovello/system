@@ -18,12 +18,18 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::group(['middleware' => ['auth', 'permissions:users']], function () {
+
+    //Lista todos os usuários
     Route::get('users', [UserController::class, 'show'])
         ->name('users.show');
+
+    //Formulário de cadastro de novo usuário
     Route::get('users/new', [UserController::class, 'create'])
         ->name('users.create');
+
     Route::post('users/new', [UserController::class, 'store'])
         ->name('users.store');
+
     Route::get('users/edit/{id}', [UserController::class, 'edit'])
         ->name('users.edit');
     Route::post('users/edit', [UserController::class, 'update'])
